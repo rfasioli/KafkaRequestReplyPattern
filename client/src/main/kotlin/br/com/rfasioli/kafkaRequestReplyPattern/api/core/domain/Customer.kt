@@ -1,10 +1,9 @@
 package br.com.rfasioli.kafkaRequestReplyPattern.api.core.domain
 
 import java.time.LocalDate
-import java.util.UUID
 
-data class Foo(
-    val id: UUID,
+data class Customer(
+    val id: String?,
     val name: String,
     val birthDate: LocalDate
 ) {

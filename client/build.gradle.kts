@@ -15,20 +15,34 @@ repositories {
 	mavenCentral()
 }
 
-extra["springCloudVersion"] = "2021.0.1"
+val springCloudVersion = "2021.0.1"
+val springdocVersion = "1.6.4"
 
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter-web")
-	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-	implementation("org.springframework.cloud:spring-cloud-stream")
+	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+
+	implementation("org.springframework.boot:spring-boot-starter-web") {
+		exclude("org.springframework.boot", "spring-boot-starter-tomcat")
+	}
+	implementation("org.springframework.boot:spring-boot-starter-actuator")
+	implementation("org.springframework.boot:spring-boot-starter-undertow")
+	implementation("org.springdoc:springdoc-openapi-ui:$springdocVersion")
+
+//	implementation("org.springframework.cloud:spring-cloud-stream")
+//	implementation("org.springframework.cloud:spring-cloud-stream-binder-kafka-streams")
+	implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
+
+	runtimeOnly( "org.springframework.boot:spring-boot-devtools")
+
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+//	testImplementation("de.flapdoodle.embed:de.flapdoodle.embed.mongo")
 }
 
 dependencyManagement {
 	imports {
-		mavenBom("org.springframework.cloud:spring-cloud-dependencies:${property("springCloudVersion")}")
+		mavenBom("org.springframework.cloud:spring-cloud-dependencies:$springCloudVersion")
 	}
 }
 
