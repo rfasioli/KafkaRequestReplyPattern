@@ -30,15 +30,15 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-undertow")
 	implementation("org.springdoc:springdoc-openapi-ui:$springdocVersion")
 
-//	implementation("org.springframework.cloud:spring-cloud-stream")
-//	implementation("org.springframework.cloud:spring-cloud-stream-binder-kafka-streams")
+	implementation("org.springframework.cloud:spring-cloud-stream")
+	implementation("org.springframework.cloud:spring-cloud-stream-binder-kafka-streams")
 	implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
 
 	runtimeOnly( "org.springframework.boot:spring-boot-devtools")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 //	testImplementation("de.flapdoodle.embed:de.flapdoodle.embed.mongo")
-}
+	}
 
 dependencyManagement {
 	imports {

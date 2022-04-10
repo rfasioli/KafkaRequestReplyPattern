@@ -1,5 +1,22 @@
 spring:
+
   data:
     mongodb:
       uri: mongodb://root:example@localhost:27017/admin
       database: db
+
+  cloud:
+    stream:
+      function:
+        definition: loanAnalysisProducer, loanAnalysisResponseConsumer
+
+      bindings:
+        loanAnalysisProducer-out-0:
+          destination: LoanAnalysisRequest
+        loanAnalysisResponseConsumer-in-0:
+          destination: LoanAnalysisResponse
+          group: ${spring.application.name}
+      kafka:
+        binder:
+          brokers: localhost:9092
+          auto-create-topics: true

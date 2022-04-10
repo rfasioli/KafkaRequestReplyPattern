@@ -7,7 +7,6 @@ import br.com.rfasioli.kafkaRequestReplyPattern.api.core.port.out.customer.FindC
 import br.com.rfasioli.kafkaRequestReplyPattern.api.core.port.out.loan.PersistLoanPort
 import br.com.rfasioli.kafkaRequestReplyPattern.api.core.port.out.loan.RequestLoanAnalysisForCustomerPort
 import org.springframework.stereotype.Service
-import java.util.*
 
 @Service
 class RequestLoanUseCase(

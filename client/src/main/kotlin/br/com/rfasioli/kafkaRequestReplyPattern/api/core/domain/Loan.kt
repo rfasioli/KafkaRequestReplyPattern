@@ -1,10 +1,9 @@
 package br.com.rfasioli.kafkaRequestReplyPattern.api.core.domain
 
 import java.math.BigDecimal
-import java.util.*
 
 data class Loan(
-    val id: UUID,
+    val id: String?,
     val customer: Customer,
     val amount: BigDecimal,
     val installments: Int,
@@ -20,7 +19,7 @@ data class Loan(
                 amount = loanRequest.amount,
                 installments = loanRequest.installments,
                 status = LoanStatus.PENDING,
-                id = UUID.randomUUID()
+                id = null
             )
     }
 }
