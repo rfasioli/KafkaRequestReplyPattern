@@ -1,4 +1,4 @@
-rootProject.name = "KafkaRequestReplyPattern"
+rootProject.name = "KotlinSpringHexagonalSample"
 
 include("client")
 include("messaging")
