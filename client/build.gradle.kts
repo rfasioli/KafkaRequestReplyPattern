@@ -15,7 +15,7 @@ repositories {
 	mavenCentral()
 }
 
-val springCloudVersion = "2021.0.1"
+val springCloudVersion = "2021.0.2"
 val springdocVersion = "1.6.7"
 
 dependencies {
