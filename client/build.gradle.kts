@@ -16,7 +16,7 @@ repositories {
 }
 
 val springCloudVersion = "2021.0.3"
-val springdocVersion = "1.6.9"
+val springdocVersion = "1.6.10"
 
 dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
